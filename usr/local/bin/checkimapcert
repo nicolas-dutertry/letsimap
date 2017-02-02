@@ -1,0 +1,24 @@
+#!/bin/bash
+
+certDir=/etc/letsencrypt/live/epsilon.dutertry.com
+certFile=$certDir/cert.pem
+keyFile=$certDir/privkey.pem
+mergedFile=$certDir/imapd.pem
+
+createMergedCert() {
+        echo "Creating $mergedFile"
+        cat $keyFile $certFile > $mergedFile
+}
+
+if [ ! -f $mergedFile ]; then
+        createMergedCert
+        exit 0
+fi
+
+mergedTime=`stat -L -c %Y $mergedFile`
+keyTime=`stat -L -c %Y $keyFile`
+
+dif=$(($keyTime-$mergedTime))
+if [ $dif -gt 0 ]; then
+        createMergedCert
+fi
