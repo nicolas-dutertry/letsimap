@@ -1,6 +1,26 @@
 #!/bin/bash
 
-certDir=/etc/letsencrypt/live/epsilon.dutertry.com
+conffile=/etc/courier/imapd-ssl
+
+certDir=''
+if [ -f $conffile ]
+then
+    regex='^TLS_CERTFILE=(/etc/letsencrypt/live/.+)/imapd\.pem'
+    while read line
+    do
+        if [[ $line =~ $regex ]]
+        then
+            certDir="${BASH_REMATCH[1]}"
+        fi
+    done < $conffile
+fi
+
+if [ ! $certDir ]
+then
+    echo "Error: Parameter TLS_CERTFILE not found or not valid" 1>&2
+    exit 1
+fi
+
 certFile=$certDir/cert.pem
 keyFile=$certDir/privkey.pem
 mergedFile=$certDir/imapd.pem
