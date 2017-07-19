@@ -9,7 +9,7 @@ conffile=/etc/courier/imapd-ssl
 
 if [ ! -f $conffile ]
 then
-    echo "$confile not found, install courier-imap"
+    echo "$conffile not found, install courier-imap"
     exit 1
 fi
 
