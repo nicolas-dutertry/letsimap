@@ -2,4 +2,4 @@
 # Regular cron jobs for the imapd ssl certificate
 #
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-30 */12 * * * root test -x /usr/local/bin/checkimapcert && checkimapcert
+30 */12 * * * root test -x /usr/local/bin/letsimap && letsimap
