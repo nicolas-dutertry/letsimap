@@ -29,4 +29,6 @@ Clone this git repository and run the install script as root:
 
 ## Certificate generation
 
-The install script generates the certificate for Courier IMAP in the file /etc/letsencrypt/live/_HOSTNAME_/imapd.pem. Every time the Let's Encrypt certificate will be renewed, imapd.pem will be automatically regenerated.
+The install script generates the certificate for Courier IMAP in the file /etc/letsencrypt/live/_HOSTNAME_/imapd.pem.
+
+Every time the Let's Encrypt certificate will be renewed, imapd.pem will be automatically regenerated.
