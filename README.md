@@ -19,4 +19,8 @@ where _HOSTNAME_ is the public hostname name of your server.
 
 ### Script files
 
-Clone this git repository and run the install script as root.
+Clone this git repository and run the install script as root:
+
+    # git clone https://github.com/nicolas-dutertry/letsimap.git
+    # cd letsimap
+    # ./install
