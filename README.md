@@ -1,6 +1,6 @@
 # Let's IMAP
 
-Cron job to manage Courier IMAP certificate based on Let's Encrypt certificate.
+Automated Let's Encrypt certificate installation for Courier IMAP daemon.
 
 If you deploy a [Let's Encrypt](https://letsencrypt.org/) certificate with [Certbot](https://certbot.eff.org/) to your web server and want to use it with Courier IMAP daemon, this script will automatically manage it for you.
 
