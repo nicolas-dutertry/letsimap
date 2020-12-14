@@ -17,6 +17,10 @@ fi
 
 if [ $? -eq 0 ]
 then
+    groupadd letsencrypt
+    usermod -a -G letsencrypt courier
+    chgrp letsencrypt /etc/letsencrypt/live
+    chmod g+rx /etc/letsencrypt/live
     cp usr/local/bin/* /usr/local/bin/
     cp etc/cron.d/* /etc/cron.d/
 fi
