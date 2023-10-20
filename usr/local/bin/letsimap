@@ -21,7 +21,7 @@ then
     exit 1
 fi
 
-certFile=$certDir/cert.pem
+certFile=$certDir/fullchain.pem
 keyFile=$certDir/privkey.pem
 mergedFile=$certDir/imapd.pem
 
